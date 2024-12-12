@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montaza Palace</title>
+    <style>
+        /* CSS styles for visual enhancements */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* Style for the button */
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style for images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Animation for fading elements */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Montaza Palace</h1>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Montaza Palace</h2>
+            <p class="fade-in">Montaza Palace is a palace and extensive gardens in the Montaza district of Alexandria, Egypt. It was built on a low plateau east of central Alexandria overlooking a beach on the Mediterranean Sea.</p>
+            <img src="4941767811568221483.webp" alt="Montaza Palace" class="fade-in">
+            <h1>Places in Montaza</h1>
+            <ol>
+                <li value="1">Montaza Beach</li>
+                <li>Stanley Bridge</li>
+                <li>San Stefano Grand Plaza</li>
+              </ol>
+            <h3>Location</h3>
+            <p>Montaza Palace is located at the Montaza Park in the eastern part of Alexandria.</p>
+            
+            <li><a href="https://www.google.com/maps/search/%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%B2%D9%87%E2%80%AD/@31.1982505,29.8780799,10z?entry=ttu" target="_blank" title="Montaza Location">Montaza Location</a></li>
+        </section>
+        
+        <!-- Button to navigate to the next page -->
+        <button onclick="location.href='citadel.html'">Next: Citadel of Qaitbay</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Alexandria Documentation</p>
+    </footer>
+
+    <script>
+        // JavaScript for animations and interactivity
+        document.addEventListener('DOMContentLoaded', () => {
+            // Alert to welcome users
+            alert('Welcome to Montaza Palace! Explore its beauty and history.');
+
+            // Fade-in effect for text and image
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            fadeInElements.forEach((el) => {
+                setTimeout(() => {
+                    el.classList.add('visible');
+                }, 500);
+            });
+
+            // Dynamic button color change
+            const button = document.querySelector('button');
+            let colors = ['#007bff', '#28a745', '#dc3545', '#ffc107'];
+            let index = 0;
+            setInterval(() => {
+                button.style.backgroundColor = colors[index];
+                index = (index + 1) % colors.length;
+            }, 1000);
+        });
+    </script>
+    <!-- Include your JavaScript for Montaza Palace here -->
+</body>
+</html>

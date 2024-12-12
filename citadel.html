@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citadel of Qaitbay</title>
+    <style>
+        /* CSS styles for visual enhancements */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* Style for the button */
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style for images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Map container styles */
+        .map-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Citadel of Qaitbay</h1>
+    </header>
+    
+    <main>
+        <section>
+            <h2>About the Citadel</h2>
+            <p>The Citadel of Qaitbay is a 15th-century defensive fortress located on the Mediterranean Sea coast in Alexandria, Egypt. It was established in 1477 AD by Sultan Al-Ashraf Sayf al-Din Qa'it Bay.</p>
+            <img src="Qaitbay_Castle_in_Alexandria.jpg" alt="Citadel of Qaitbay">
+            <table border="1" width="600" style="margin: 20px auto; text-align: center;">
+                <caption><strong>Visiting Hours & Prices</strong></caption>
+                <tr>
+                  <th>Visited Time</th>
+                  <th>Price (USD)</th>
+                </tr>
+                <tr>
+                  <td>8:00 - 9:00 AM</td>
+                  <td>50</td>
+                </tr>
+                <tr>
+                  <td>9:00 - 10:00 AM</td>
+                  <td>60</td>
+                </tr>
+                <tr>
+                  <td>10:00 - 11:00 AM</td>
+                  <td>70</td>
+                </tr>
+                <tr>
+                  <td>11:00 - 12:00 PM</td>
+                  <td>80</td>
+                </tr>
+                <tr>
+                  <td>12:00 - 1:00 PM</td>
+                  <td>100</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h3>Location</h3>
+            <p>The Citadel of Qaitbay is situated on the eastern side of the northern tip of Pharos Island at the mouth of the Eastern Harbour.</p>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.587548444505!2d29.881107815029226!3d31.21557338145866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c4a4fb9a3e41%3A0x8e97bbaace7d6037!2sCitadel%20of%20Qaitbay!5e0!3m2!1sen!2seg!4v1634558225619!5m2!1sen!2seg" 
+                    allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- Button to navigate to the previous page -->
+        <button onclick="location.href='montaza.html'">Previous: Montaza Palace</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Alexandria Documentation</p>
+    </footer>
+
+    <script>
+        // JavaScript enhancements
+        // Alert users to check the visiting times
+        document.addEventListener('DOMContentLoaded', () => {
+            alert('Welcome to the Citadel of Qaitbay! Don\'t forget to check the visiting times and prices.');
+        });
+
+        // Animate the table rows on hover
+        const rows = document.querySelectorAll('table tr');
+        rows.forEach((row, index) => {
+            if (index > 0) { // Skip header row
+                row.addEventListener('mouseover', () => {
+                    row.style.backgroundColor = '#f0f0f0';
+                });
+                row.addEventListener('mouseout', () => {
+                    row.style.backgroundColor = '';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

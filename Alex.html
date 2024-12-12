@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandria Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* Style for the badge */
+        .badge {
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            position: relative;
+            top: -10px;
+            left: 10px;
+        }
+
+        /* Carousel styles */
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 500px;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-controls button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Alexandria Documentation</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="openPlace('montaza.html')">Montaza Palace</a></li>
+                <li><a href="#" onclick="openPlace('citadel.html')">Citadel of Qaitbay</a></li>
+                <li><span class="badge" id="badge">Welcome</span></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="carousel">
+        <img src="4941767811568221483.webp" alt="Montaza Palace" class="active">
+        <img src="Qaitbay_Castle_in_Alexandria.jpg" alt="Citadel of Qaitbay">
+        <img src="افضل-انشطة-عند-زيارة-منارة-الاسكندرية-التاريخية-4-1024x683.jpg" alt="Alexandria Library">
+        <div class="carousel-controls">
+            <button onclick="prevSlide()">&#10094;</button>
+            <button onclick="nextSlide()">&#10095;</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Alexandria Documentation</p>
+    </footer>
+
+    <script>
+        // Function to open a new place
+        function openPlace(place) {
+            window.open(place, '_blank');
+        }
+
+        // Function to update the badge text
+        function updateBadge() {
+            let badge = document.getElementById('badge');
+            badge.textContent = "Alexandria is the bride of the Mediterranean";
+        }
+
+        // Simulating badge update after 3 seconds
+        setTimeout(updateBadge, 3000);
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel img');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Auto-slide every 5 seconds
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
